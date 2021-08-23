@@ -9,7 +9,7 @@ public class PracticeFormPage {
     private final By lastName = By.id("lastName");
     private final By userEmail = By.id("userEmail");
 
-    public PracticeFormPage(WebDriver driver){
+    public PracticeFormPage(WebDriver driver) {
         this.driver = driver;
     }
 
@@ -30,4 +30,21 @@ public class PracticeFormPage {
         emailSpace.click();
         emailSpace.sendKeys(emailString);
     }
+
+    public String getName() {
+        WebElement nameSpace = driver.findElement(firstName);
+        return nameSpace.getAttribute("value");
+    }
+
+    public String getLastName() {
+        WebElement nameSpace = driver.findElement(lastName);
+        return nameSpace.getAttribute("value");
+    }
+
+    public String getEmail() {
+        WebElement nameSpace = driver.findElement(userEmail);
+        return nameSpace.getAttribute("value");
+    }
+
+
 }
