@@ -17,6 +17,8 @@
         <apache.httpclient.version>4.5.13</apache.httpclient.version>
         <!-- JUnit Jupiter -->
         <junit.jupiter.version>5.7.0</junit.jupiter.version>
+        <!-- Maven Plugins -->
+        <apache.maven.plugins.version>2.22.0</apache.maven.plugins.version>
     </properties>
 
     <dependencies>
@@ -40,10 +42,24 @@
         <!-- JUnit Jupiter -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
+            <artifactId>junit-jupiter-engine</artifactId>
             <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
 
+
+
     </dependencies>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${apache.maven.plugins.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>

@@ -2,14 +2,13 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@TestInstance(TestInstance.Lifecycle.PER_METHOD)
 public class BaseTest {
 
     protected WebDriver driver;
 
-
     @BeforeAll //her şeyden önce bunu çalıştır
-    public void setUp() {
+    public static void setUp() {
         System.out.println("Setup method initiated!");
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
     }
@@ -25,7 +24,7 @@ public class BaseTest {
     }
 
     @AfterAll
-    public void tearDown() {
+    public static void tearDown() {
         //driver.quit();
         System.out.println("Test finished!");
     }
