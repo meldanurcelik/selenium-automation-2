@@ -19,6 +19,8 @@
         <junit.jupiter.version>5.7.0</junit.jupiter.version>
         <!-- Maven Plugins -->
         <apache.maven.plugins.version>2.22.0</apache.maven.plugins.version>
+        <!-- WebDriverManager -->
+        <WebDriverManager.version>5.0.1</WebDriverManager.version>
     </properties>
 
     <dependencies>
@@ -46,8 +48,13 @@
             <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
-
-
+        <!-- WebDriverManager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${WebDriverManager.version}</version>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
